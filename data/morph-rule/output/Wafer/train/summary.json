@@ -1,0 +1,144 @@
+{
+  "dataset": "Wafer",
+  "split": "train",
+  "n_samples": 600,
+  "seq_len": 152,
+  "n_channels": 13,
+  "channel_names": [
+    "raw",
+    "robust_norm",
+    "dx",
+    "d2x",
+    "rolling_mean",
+    "rolling_std",
+    "local_slope",
+    "change_point_score",
+    "active_shape_score",
+    "peak_score",
+    "periodicity_score",
+    "wavelet_energy",
+    "spectral_energy"
+  ],
+  "class_names": [
+    "none",
+    "spike",
+    "trend_up",
+    "trend_down",
+    "level_shift",
+    "amplitude_change"
+  ],
+  "roles": {
+    "derived_features": "derived_input_feature",
+    "y_series": "series_classification_label",
+    "pseudo_labels": "pseudo_label",
+    "annotations": "dsl_annotation"
+  },
+  "ablation_groups": {
+    "raw": [
+      "raw",
+      "robust_norm"
+    ],
+    "generic": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score"
+    ],
+    "morphology": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score",
+      "peak_score",
+      "periodicity_score",
+      "wavelet_energy",
+      "spectral_energy"
+    ],
+    "cbf_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "active_shape_score"
+    ],
+    "ecg_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_std",
+      "peak_score"
+    ],
+    "wafer_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "forda_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "tsb_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ]
+  },
+  "meta": {
+    "task": "multitask_morphology",
+    "primitive_names": [
+      "none",
+      "spike",
+      "trend_up",
+      "trend_down",
+      "level_shift",
+      "amplitude_change"
+    ],
+    "attr_names": [
+      "amplitude",
+      "duration",
+      "polarity",
+      "slope",
+      "total_change",
+      "delta_mean",
+      "scale",
+      "delta_std"
+    ],
+    "wafer_mode": "controlled",
+    "n_original": 0,
+    "n_controlled": 600,
+    "n_total": 600,
+    "seq_len": 152,
+    "n_templates": 903,
+    "recommended_channels": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "note": "Inputs=X_features (wafer_v1 6ch: raw/norm/dx/rolling_mean/local_slope/change_point). Labels=y_type/intervals/attributes/segment_mask. controlled = injected industrial anomaly GT on normal wafers; original UCR normal/abnormal is Original Anomaly-like Classification only."
+  }
+}

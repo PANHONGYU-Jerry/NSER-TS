@@ -1,0 +1,143 @@
+{
+  "dataset": "TwoPatterns",
+  "split": "test",
+  "n_samples": 4000,
+  "seq_len": 128,
+  "n_channels": 13,
+  "channel_names": [
+    "raw",
+    "robust_norm",
+    "dx",
+    "d2x",
+    "rolling_mean",
+    "rolling_std",
+    "local_slope",
+    "change_point_score",
+    "active_shape_score",
+    "peak_score",
+    "periodicity_score",
+    "wavelet_energy",
+    "spectral_energy"
+  ],
+  "class_names": [
+    "down_down",
+    "up_down",
+    "down_up",
+    "up_up"
+  ],
+  "roles": {
+    "derived_features": "derived_input_feature",
+    "y_series": "series_classification_label",
+    "pseudo_labels": "pseudo_label",
+    "annotations": "dsl_annotation"
+  },
+  "ablation_groups": {
+    "raw": [
+      "raw",
+      "robust_norm"
+    ],
+    "generic": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score"
+    ],
+    "morphology": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score",
+      "peak_score",
+      "periodicity_score",
+      "wavelet_energy",
+      "spectral_energy"
+    ],
+    "cbf_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "active_shape_score"
+    ],
+    "ecg_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_std",
+      "peak_score"
+    ],
+    "wafer_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "forda_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "twopatterns_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "active_shape_score"
+    ],
+    "tsb_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ]
+  },
+  "meta": {
+    "task": "multitask_morphology",
+    "primitive_names": [
+      "down_down",
+      "up_down",
+      "down_up",
+      "up_up"
+    ],
+    "attr_names": [
+      "duration",
+      "amplitude",
+      "p1_start",
+      "p1_end",
+      "p1_duration",
+      "p1_amplitude",
+      "p2_start",
+      "p2_end",
+      "p2_duration",
+      "p2_amplitude",
+      "width"
+    ],
+    "tp_mode": "original",
+    "n_original": 4000,
+    "n_controlled": 0,
+    "n_total": 4000,
+    "seq_len": 128,
+    "recommended_channels": "twopatterns_v1",
+    "note": "Inputs=X_features; Labels=y_type/intervals/attributes/segment_mask. original = UCR class + pseudo plateaus; controlled = Geurts-style GT."
+  }
+}

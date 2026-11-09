@@ -1,0 +1,8 @@
+data/morph-rule/output/FordB/train/X_features.npy filter=lfs diff=lfs merge=lfs -text
+data/morph-rule/output/FordB/train/ablation_morphology.npy filter=lfs diff=lfs merge=lfs -text
+data/morph-rule/output/StarLightCurves/test/X_features.npy filter=lfs diff=lfs merge=lfs -text
+data/morph-rule/output/StarLightCurves/test/ablation_morphology.npy filter=lfs diff=lfs merge=lfs -text
+data/morph-rule/output/FordA/train/ablation_generic.npy filter=lfs diff=lfs merge=lfs -text
+data/morph-rule/output/FordA/train/X_features.npy filter=lfs diff=lfs merge=lfs -text
+data/morph-rule/output/FordA/train/ablation_morphology.npy filter=lfs diff=lfs merge=lfs -text
+data/morph-rule/output/FordB/train/ablation_generic.npy filter=lfs diff=lfs merge=lfs -text

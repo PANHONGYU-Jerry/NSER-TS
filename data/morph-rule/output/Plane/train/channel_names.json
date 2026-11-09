@@ -1,0 +1,32 @@
+{
+  "names": [
+    "raw",
+    "robust_norm",
+    "dx",
+    "d2x",
+    "rolling_mean",
+    "rolling_std",
+    "local_slope",
+    "change_point_score",
+    "active_shape_score",
+    "peak_score",
+    "periodicity_score",
+    "wavelet_energy",
+    "spectral_energy"
+  ],
+  "roles": {
+    "raw": "derived_input_feature",
+    "robust_norm": "derived_input_feature",
+    "dx": "derived_input_feature",
+    "d2x": "derived_input_feature",
+    "rolling_mean": "derived_input_feature",
+    "rolling_std": "derived_input_feature",
+    "local_slope": "derived_input_feature",
+    "change_point_score": "derived_input_feature",
+    "active_shape_score": "derived_input_feature",
+    "peak_score": "derived_input_feature",
+    "periodicity_score": "derived_input_feature",
+    "wavelet_energy": "derived_input_feature",
+    "spectral_energy": "derived_input_feature"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "dataset": "SyntheticControl",
+  "split": "test",
+  "n_samples": 360,
+  "seq_len": 60,
+  "n_channels": 13,
+  "channel_names": [
+    "raw",
+    "robust_norm",
+    "dx",
+    "d2x",
+    "rolling_mean",
+    "rolling_std",
+    "local_slope",
+    "change_point_score",
+    "active_shape_score",
+    "peak_score",
+    "periodicity_score",
+    "wavelet_energy",
+    "spectral_energy"
+  ],
+  "class_names": [
+    "none",
+    "spike",
+    "trend_up",
+    "trend_down",
+    "level_shift",
+    "phase_shift",
+    "frequency_change"
+  ],
+  "roles": {
+    "derived_features": "derived_input_feature",
+    "y_series": "series_classification_label",
+    "pseudo_labels": "pseudo_label",
+    "annotations": "dsl_annotation"
+  },
+  "ablation_groups": {
+    "raw": [
+      "raw",
+      "robust_norm"
+    ],
+    "generic": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score"
+    ],
+    "morphology": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score",
+      "peak_score",
+      "periodicity_score",
+      "wavelet_energy",
+      "spectral_energy"
+    ],
+    "cbf_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "active_shape_score"
+    ],
+    "ecg_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_std",
+      "peak_score"
+    ],
+    "wafer_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "forda_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "tsb_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ]
+  },
+  "meta": {
+    "task": "multitask_morphology",
+    "primitive_names": [
+      "none",
+      "spike",
+      "trend_up",
+      "trend_down",
+      "level_shift",
+      "phase_shift",
+      "frequency_change"
+    ],
+    "attr_names": [
+      "slope",
+      "amplitude",
+      "duration",
+      "delta_mean",
+      "phase_delta",
+      "freq_before",
+      "freq_after"
+    ],
+    "n_injected_spike": 30,
+    "n_injected_phase": 30,
+    "n_original": 300,
+    "n_total": 360,
+    "note": "Inputs=X_features; Labels=y_type/intervals/attributes/segment_mask. spike & phase_shift come from injected_ground_truth."
+  }
+}

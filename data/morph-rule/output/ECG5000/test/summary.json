@@ -1,0 +1,145 @@
+{
+  "dataset": "ECG5000",
+  "split": "test",
+  "n_samples": 1500,
+  "seq_len": 140,
+  "n_channels": 13,
+  "channel_names": [
+    "raw",
+    "robust_norm",
+    "dx",
+    "d2x",
+    "rolling_mean",
+    "rolling_std",
+    "local_slope",
+    "change_point_score",
+    "active_shape_score",
+    "peak_score",
+    "periodicity_score",
+    "wavelet_energy",
+    "spectral_energy"
+  ],
+  "class_names": [
+    "positive_peak",
+    "negative_peak",
+    "wide_peak",
+    "narrow_peak",
+    "amplitude_change"
+  ],
+  "roles": {
+    "derived_features": "derived_input_feature",
+    "y_series": "series_classification_label",
+    "pseudo_labels": "pseudo_label",
+    "annotations": "dsl_annotation"
+  },
+  "ablation_groups": {
+    "raw": [
+      "raw",
+      "robust_norm"
+    ],
+    "generic": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score"
+    ],
+    "morphology": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_mean",
+      "rolling_std",
+      "local_slope",
+      "change_point_score",
+      "active_shape_score",
+      "peak_score",
+      "periodicity_score",
+      "wavelet_energy",
+      "spectral_energy"
+    ],
+    "cbf_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "active_shape_score"
+    ],
+    "ecg_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_std",
+      "peak_score"
+    ],
+    "wafer_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "forda_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ],
+    "tsb_v1": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "rolling_mean",
+      "local_slope",
+      "change_point_score"
+    ]
+  },
+  "meta": {
+    "task": "multitask_morphology",
+    "primitive_names": [
+      "positive_peak",
+      "negative_peak",
+      "wide_peak",
+      "narrow_peak",
+      "amplitude_change"
+    ],
+    "attr_names": [
+      "peak_position",
+      "width",
+      "amplitude",
+      "prominence",
+      "duration",
+      "amplitude_scale",
+      "delta_amplitude",
+      "shift_steps",
+      "delta_mean",
+      "template_distance",
+      "polarity"
+    ],
+    "ecg5000_mode": "controlled",
+    "ecg5000_version": "v1",
+    "n_original": 0,
+    "n_controlled": 1500,
+    "n_total": 1500,
+    "seq_len": 140,
+    "recommended_channels": [
+      "raw",
+      "robust_norm",
+      "dx",
+      "d2x",
+      "rolling_std",
+      "peak_score"
+    ],
+    "note": "Inputs=X_features (ecg_v1 6ch with peak_score). Labels=y_type/intervals/attributes/segment_mask. controlled = injected waveform GT on ECG beats; original UCR 5-class is Original ECG Beat Classification only."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "dataset": "ElectricDevices",
+  "splits": [
+    "train",
+    "test"
+  ],
+  "roles": {
+    "X_features.npy": "derived_input_feature",
+    "y_series.npy": "series_classification_label_or_ucr_id",
+    "y_type.npy": "primitive_type_label",
+    "intervals.npy": "interval_localization_label",
+    "attr_vector.npy": "attribute_regression_label",
+    "attr_mask.npy": "attribute_validity_mask",
+    "segment_mask.npy": "dense_interval_mask_label",
+    "pseudo_labels.jsonl": "pseudo_label",
+    "annotations.jsonl": "dsl_annotation",
+    "multi_labels.jsonl": "multi_hierarchical_pseudo_label",
+    "multi_supervision.jsonl": "multi_hierarchical_supervision"
+  },
+  "shape_taxonomy": {
+    "background": [
+      "periodic",
+      "frequency_change"
+    ],
+    "foreground": [
+      "stable",
+      "trend_up",
+      "trend_down",
+      "shift_up",
+      "shift_down",
+      "spike",
+      "valley"
+    ],
+    "all_types": [
+      "periodic",
+      "frequency_change",
+      "stable",
+      "trend_up",
+      "trend_down",
+      "shift_up",
+      "shift_down",
+      "spike",
+      "valley"
+    ],
+    "relations": [
+      "CONTAINS",
+      "OVERLAY",
+      "MODULATES"
+    ],
+    "max_labels_per_sample": 6
+  },
+  "primitive_names": [
+    "none",
+    "spike",
+    "trend_up",
+    "trend_down",
+    "level_shift",
+    "amplitude_change"
+  ],
+  "attr_names": [
+    "amplitude",
+    "duration",
+    "polarity",
+    "slope",
+    "total_change",
+    "delta_mean",
+    "scale",
+    "delta_std"
+  ],
+  "cbf_mode": null,
+  "ecg_mode": null,
+  "ecg_version": null,
+  "ecg5000_mode": null,
+  "ecg5000_version": null,
+  "wafer_mode": null,
+  "forda_mode": null,
+  "forda_version": null,
+  "tp_mode": null,
+  "recommended_channels": [
+    "raw",
+    "robust_norm",
+    "dx",
+    "rolling_mean",
+    "local_slope",
+    "change_point_score"
+  ],
+  "warning": "Do NOT feed y_type/intervals/attributes/segment_mask as model inputs. Only X_features (or ablation_*) are inputs."
+}
